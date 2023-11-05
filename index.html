@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>index</title>
+    <style>
+
+    </style>
+    <script type="module" crossorigin src="/js-week5/assets/main-d9ba72fb.js"></script>
+    <link rel="stylesheet" href="/js-week5/assets/main-3302bdd5.css">
+  </head>
+  <body>
+    <!--  -->
+
+    <div class="container px-0 mb-100">
+    
+      <div class="addTicket-panel px-3 px-md-95 py-60 d-flex flex-column flex-md-row mt-120 ">
+
+        <div class="addTicket-img d-flex flex-column justify-content-around">
+          <img src="/js-week5/assets/main_img-1918b0d0.png" alt="圖片">
+          <img class="d-none d-md-block" src="/js-week5/assets/logo-86a655b0.png" alt="圖片">
+        </div>
+
+        <div class="addTicket-form Noto-Sans text-primary-0 flex-grow-1">
+
+          <h1 class="title fs-4 fw-bold border-bottom border-3 border-primary-0 mb-36"><span class="me-2"><i class="fas fa-plus-circle"></i></span>新增旅遊套票</h1>
+          
+          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
+            <label for="ticketName" class="fw-bold">套票名稱</label>
+            <input  type="text" id="ticketName" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票名稱" name="套票名稱">
+          </div>
+
+                
+          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
+            
+            <label for="ticketImgUrl" class="fw-bold">圖片網址</label>
+            <input  type="text" id="ticketImgUrl" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫圖片網址" name="圖片網址">
+      
+          </div>
+
+                
+          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
+            <label for="ticketRegion" class="fw-bold">景點地區</label>
+            <select  id="ticketRegion" class="w-75 py-2 ps-12 bg-primary-2 border-0 border-bottom border-1 border-primary-0" name="景點地區">
+              <option value="" disabled selected hidden>請選擇景點地區</option>
+              <option value="台北">台北</option>
+              <option value="台中">台中</option>
+              <option value="高雄">高雄</option>
+            </select>
+          </div>
+
+                
+          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
+            <label for="ticketPrice" class="fw-bold">套票金額</label>
+            <input  type="number" id="ticketPrice" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票金額" name="套票金額" min="0">
+          </div>
+
+                
+          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
+            <label for="ticketNum" class="fw-bold">套票組數</label>
+            <input  type="number" id="ticketNum" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票組數" name="套票組數" min="1">
+          </div>
+
+                
+          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
+            <label for="ticketRate" class="fw-bold">套票星級</label>
+            <input  type="number" id="ticketRate" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票星級" name="套票星級"  min="1" max="10">
+          </div>
+
+                
+          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
+            <label for="ticketDescription" class="fw-bold">套票描述</label>
+            <textarea  name="套票描述" id="ticketDescription" class="w-75 min-h-111 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票描述 (限 100 字)"></textarea>
+          </div>
+
+          <div class=" mt-4 d-flex justify-content-center justify-content-md-end align-items-center ">
+            <button type="button" class="addTicket-btn btn py-10 px-40 bg-primary-0 text-light fs-5" value="新增套票">新增套票</button>
+          </div>
+         
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-primary-2 px-0 pb-95">
+
+      <div class="container ">
+
+        <div  class="search-area py-56 d-flex flex-column flex-md-row align-items-center">
+          <select name="" class="regionSearch  py-2 ps-12 Noto-Sans text-primary-4 w-20">
+            <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
+            <option value="">全部地區</option>
+            <option value="台北">台北</option>
+            <option value="台中">台中</option>
+            <option value="高雄">高雄</option>
+          </select>
+          <p id="searchResult-text" class="Noto-Sans text-primary-4 ms-30">本次搜尋共 3 筆資料</p>
+        </div>
+
+        <ul class="ticketCard-area row gx-4 Noto-Sans">
+
+          <!-- 卡片樣式 -->
+        <!--           
+          <li class="ticketCard col-12 col-sm-6 col-md-4 ">
+            <div class="Card"> 
+              <div class="ticketCard-head">
+                <a href="#">
+                  <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80">
+                </a>
+                <p class="ticketCard-region">高雄</p>
+                <p class="ticketCard-rank">10</p>
+              </div>
+            
+              <div class="ticketCard-content">
+                <h3 class="ticketCard-name">
+                  <a href="" >綠島自由行套裝行程</a>
+                </h3>
+                <p class="ticketCard-description">嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿，行程加贈『綠島浮潛體驗』以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。
+                </p>
+              </div>
+              <div class="ticketCard-footer">
+                <p class="ticketCard-num">
+                  <span><i class="fas fa-exclamation-circle"></i></span>
+                  <span>剩下最後 87 組</span>
+                </p>
+                <p class="ticketCard-price">
+                  TWD <span id="ticketCard-price">$1400</span>
+                </p>
+              </div>
+            </div>
+          </li> 
+        -->
+
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+    
+    <script>
+      let ticketCardArea = document.querySelector('.ticketCard-area')
+      let ticketName = document.querySelector('#ticketName')
+      let ticketImgUrl = document.querySelector('#ticketImgUrl')
+      let ticketRegion = document.querySelector('#ticketRegion')
+      let ticketPrice = document.querySelector('#ticketPrice')
+      let ticketNum = document.querySelector('#ticketNum')
+      let ticketRate = document.querySelector('#ticketRate')
+      let ticketDescription = document.querySelector('#ticketDescription')
+
+      let regionSearch = document.querySelector('.regionSearch')
+      let addTicketBtn = document.querySelector('.addTicket-btn')
+
+      let domElement = [] //需要操作dom元素時候再把它們push進來，重製時要清空
+      let data = [
+        {
+          "id": 0,
+          "name": "肥宅心碎賞櫻3日",
+          "imgUrl": "https://images.unsplash.com/photo-1522383225653-ed111181a951?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80",
+          "area": "高雄",
+          "description": "賞櫻花最佳去處。肥宅不得不去的超讚景點！",
+          "group": 87,
+          "price": 1400,
+          "rate": 10
+        },
+        {
+          "id": 1,
+          "name": "貓空纜車雙程票",
+          "imgUrl": "https://images.unsplash.com/photo-1501393152198-34b240415948?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+          "area": "台北",
+          "description": "乘坐以透明強化玻璃為地板的「貓纜之眼」水晶車廂，享受騰雲駕霧遨遊天際之感",
+          "group": 99,
+          "price": 240,
+          "rate": 2
+        },
+        {
+          "id": 2,
+          "name": "台中谷關溫泉會1日",
+          "imgUrl": "https://images.unsplash.com/photo-1535530992830-e25d07cfa780?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+          "area": "台中",
+          "description": "全館客房均提供谷關無色無味之優質碳酸原湯，並取用八仙山之山冷泉供蒞臨貴賓沐浴及飲水使用。",
+          "group": 20,
+          "price": 1765,
+          "rate": 7
+        }
+      ];
+
+      
+    
+
+      // 卡片頭部
+      function createImg(imgUrl){
+        let img = new Image();
+        img.src = imgUrl
+        return img
+      }
+      function createImg_alink(imgUrl){
+        let a_link = document.createElement('a')
+        let img = createImg(imgUrl)
+        a_link.href='#'
+        a_link.appendChild(img)
+        return a_link
+      }
+      function createCardRegion(area){
+        let p = document.createElement('p');
+        p.classList.add('ticketCard-region')
+        p.textContent = area
+        return p
+      }
+      function createCardRank(rate){
+        let p = document.createElement('p');
+        p.classList.add('ticketCard-rank')
+        p.textContent = rate
+        return p
+      }
+      function createCardHead(obj){
+        let div = document.createElement('div');
+        let a_link = createImg_alink(obj.imgUrl)
+        let region = createCardRegion(obj.area)
+        let rang = createCardRank(obj.rate)
+
+        div.classList.add('ticketCard-head')
+        div.appendChild(a_link)
+        div.appendChild(region)
+        div.appendChild(rang)
+        return div
+
+      }
+
+      //卡片內文
+      function createCardTitle(name){
+        let title = document.createElement('h3');
+        let a_link = createContent_alink(name)
+        title.classList.add('ticketCard-name')
+        title.appendChild(a_link)
+        return title
+      }
+      function createContent_alink(name){
+        let a = document.createElement('a')
+        a.href='#'
+        a.textContent = name
+        return a
+      }
+      function createContent(description){
+        let p = document.createElement('p');
+        p.classList.add('ticketCard-description')
+        p.textContent = description
+        return p
+      }
+      function createCardContent(obj){
+        let div = document.createElement('div')
+        let title = createCardTitle(obj.name)
+        let content = createContent(obj.description)
+
+        div.classList.add('ticketCard-content')
+        div.appendChild(title)
+        div.appendChild(content)
+        return div
+      }
+
+      //卡片底部
+      function numContent(group){
+        let span = document.createElement('span')
+        span.textContent = `剩下最後${group}組`
+        return span
+      }
+      function createI(){
+        let span = document.createElement('span')
+        let i = document.createElement('i')
+        i.classList.add('fas','fa-exclamation-circle')
+        span.appendChild(i)
+        return span
+      }
+      function ticketCardNum(group){
+        let p = document.createElement('p')
+        let num = numContent(group)
+        let span = createI()
+        p.classList.add('ticketCard-num')
+        p.appendChild(span)
+        p.appendChild(num)
+        return p
+      }
+  
+      function createPriceNum(price){
+        let span = document.createElement('span')
+        span.id = 'ticketCard-price'
+        span.textContent = `$${price}`
+        return span
+      }
+
+      function ticketCardPrice(price){
+        let p = document.createElement('p')
+        let priceNum = createPriceNum(price)
+        p.classList.add('ticketCard-price')
+        p.textContent = 'TWD'
+        p.appendChild(priceNum)
+        return p
+      }
+      function createCardFooter(obj){
+        let div = document.createElement('div')
+        let cardNum = ticketCardNum(obj.group)
+        let cardPrice = ticketCardPrice(obj.price)
+        div.classList.add('ticketCard-footer')
+        div.appendChild(cardNum)
+        div.appendChild(cardPrice)
+        return div
+      }
+
+
+      //整合整張card
+      function create_card(obj){
+        let div = document.createElement('div')
+        let li = document.createElement('li')
+        let head = createCardHead(obj)
+        let content = createCardContent(obj)
+        let footer = createCardFooter(obj)
+        div.classList.add('Card')
+        li.classList.add('ticketCard','col-12' ,'col-sm-6','col-md-4')
+
+        div.appendChild(head)
+        div.appendChild(content)
+        div.appendChild(footer)
+        li.appendChild(div)
+        return ticketCardArea.appendChild(li)
+      }
+
+ 
+      //初始化
+      function init(){
+        data.forEach(function(item){
+          // domElement.push(create_card(item))
+          create_card(item)
+        })
+      }
+
+      //更新 重製 後 渲染
+      function resetView(array){
+        // domElement = []
+        while(ticketCardArea.firstChild){
+          ticketCardArea.removeChild(ticketCardArea.firstChild)
+        }
+
+        array.forEach(function(item){
+          create_card(item)
+        })
+
+      }
+
+      //資料篩選 篩選後 渲染
+      function filterData(string){
+        let newData = data.filter(function(item){
+          if(item.area === string){
+            return item
+          }
+        })
+        resetView(newData)
+      }
+
+
+      ticketPrice.addEventListener('input',function(e){
+          let reg =  /^[0-9]*$/
+          if(Number(e.target.value) < 0 ){
+            e.target.value = 0
+          }else if( reg.test( Number(e.target.value[1]) )&&e.target.value[0]==='0'){
+            e.target.value = ''
+          }
+     
+          
+      })
+      ticketRate.addEventListener('input',function(e){
+          if(Number(e.target.value) <= 0   ){
+            e.target.value = 1
+          }
+          if(Number(e.target.value) > 10  ){
+            e.target.value = 10
+          }
+
+      })
+      ticketNum.addEventListener('input',function(e){
+        if(Number(e.target.value) <= 0  ){
+            e.target.value = 1
+          }
+      })
+
+
+      addTicketBtn.addEventListener('click',function(e){
+        if(ticketName.value===''||ticketImgUrl.value===''||ticketRegion.value===''||ticketPrice.value===''
+        ||ticketNum.value===''||ticketRate.value===''||ticketDescription.value===''){
+            alert('欄位不能空白')
+            return
+        }
+        let newData =  {
+          "id": data.length ,
+          "name": ticketName.value,
+          "imgUrl": ticketImgUrl.value,
+          "area": ticketRegion.value,
+          "description": ticketDescription.value,
+          "group": Number(ticketNum.value),
+          "price": Number(ticketPrice.value),
+          "rate": Number(ticketRate.value)
+        }
+        data.push(newData)
+        resetView(data)
+        // console.log(data)
+      })
+
+      regionSearch.addEventListener('change',function(e){
+        console.log(e.target.value)
+        if(e.target.value === ''){
+          resetView(data)
+        }else{
+          filterData(e.target.value)
+        }
+        
+      })
+      init()
+
+
+    </script>
+  </body>
+</html>
