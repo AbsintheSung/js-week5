@@ -26,56 +26,131 @@
 
           <h1 class="title fs-4 fw-bold border-bottom border-3 border-primary-0 mb-36"><span class="me-2"><i class="fas fa-plus-circle"></i></span>新增旅遊套票</h1>
           
-          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
-            <label for="ticketName" class="fw-bold">套票名稱</label>
-            <input  type="text" id="ticketName" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票名稱" name="套票名稱">
+          <div class="from-group d-flex justify-content-between align-items-start flex-column">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <label for="ticketName" class="fw-bold">套票名稱</label>
+                <input  type="text" id="ticketName" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票名稱" name="套票名稱">
+            </div>
+            <div class="alert-message d-flex ms-auto my-2 justify-content-start w-75" >
+              <p id="ticketPrice-message" class="text-danger-1 fw-bold"   data-message="套票名稱">
+                <i class="fas fa-exclamation-circle"></i>
+                            <span>必填!</span>
+              </p>
+            </div>
+            <!-- <label for="ticketName" class="fw-bold">套票名稱</label>
+            <input  type="text" id="ticketName" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票名稱" name="套票名稱"> -->
           </div>
-
+  
                 
-          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
-            
-            <label for="ticketImgUrl" class="fw-bold">圖片網址</label>
-            <input  type="text" id="ticketImgUrl" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫圖片網址" name="圖片網址">
+          <div class="from-group  d-flex justify-content-between align-items-start flex-column">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <label for="ticketImgUrl" class="fw-bold">圖片網址</label>
+              <input  type="text" id="ticketImgUrl" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫圖片網址" name="圖片網址">
+            </div>
+           
+            <div class="alert-message d-flex ms-auto my-2 justify-content-start w-75" >
+              <p id="ticketPrice-message" class="text-danger-1 fw-bold"  data-message="圖片網址">
+                <i class="fas fa-exclamation-circle"></i>
+                            <span>必填!</span>
+              </p>
+            </div>
       
           </div>
 
                 
-          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
-            <label for="ticketRegion" class="fw-bold">景點地區</label>
-            <select  id="ticketRegion" class="w-75 py-2 ps-12 bg-primary-2 border-0 border-bottom border-1 border-primary-0" name="景點地區">
-              <option value="" disabled selected hidden>請選擇景點地區</option>
-              <option value="台北">台北</option>
-              <option value="台中">台中</option>
-              <option value="高雄">高雄</option>
-            </select>
+          <div class="from-group  d-flex justify-content-between align-items-start flex-column">
+
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <label for="ticketRegion" class="fw-bold">景點地區</label>
+              <select  id="ticketRegion" class="w-75 py-2 ps-12 bg-primary-2 border-0 border-bottom border-1 border-primary-0" name="景點地區">
+                <option value="" disabled selected hidden>請選擇景點地區</option>
+                <option value="台北">台北</option>
+                <option value="台中">台中</option>
+                <option value="高雄">高雄</option>
+              </select>
+            </div>
+
+            <div class="alert-message d-flex ms-auto my-2 justify-content-start w-75" >
+              <p id="ticketPrice-message" class="text-danger-1 fw-bold"   data-message="景點地區">
+                <i class="fas fa-exclamation-circle"></i>
+                            <span>必填!</span>
+              </p>
+            </div>
+
+           
           </div>
 
                 
-          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
-            <label for="ticketPrice" class="fw-bold">套票金額</label>
-            <input  type="number" id="ticketPrice" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票金額" name="套票金額" min="0">
+          <div class="from-group  d-flex justify-content-between align-items-start flex-column">
+
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <label for="ticketPrice" class="fw-bold">套票金額</label>
+              <input  type="number" id="ticketPrice" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票金額" name="套票金額" min="0">
+            </div>
+
+            <div class="alert-message d-flex ms-auto my-2 justify-content-start w-75" >
+              <p id="ticketPrice-message"  class="text-danger-1 fw-bold"   data-message="套票金額">
+                <i class="fas fa-exclamation-circle "></i>
+                            <span>必填!</span>
+              </p>
+            </div>
+
+           
           </div>
 
                 
-          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
-            <label for="ticketNum" class="fw-bold">套票組數</label>
-            <input  type="number" id="ticketNum" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票組數" name="套票組數" min="1">
+          <div class="from-group  d-flex justify-content-between align-items-start flex-column">
+
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <label for="ticketNum" class="fw-bold">套票組數</label>
+              <input  type="number" id="ticketNum" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票組數" name="套票組數" min="1">
+            </div>
+
+            <div class="alert-message d-flex ms-auto my-2 justify-content-start w-75" >
+              <p id="ticketPrice-message"  class="text-danger-1 fw-bold"  data-message="套票組數">
+                <i class="fas fa-exclamation-circle"></i>
+                            <span>必填!</span>
+              </p>
+            </div>
+
           </div>
 
                 
-          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
-            <label for="ticketRate" class="fw-bold">套票星級</label>
+          <div class="from-group  d-flex justify-content-between align-items-start flex-column">
+
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <label for="ticketRate" class="fw-bold">套票星級</label>
             <input  type="number" id="ticketRate" class="w-75 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票星級" name="套票星級"  min="1" max="10">
+            </div>
+
+            <div class="alert-message d-flex ms-auto my-2 justify-content-start w-75" >
+              <p id="ticketPrice-message"  class="text-danger-1 fw-bold"   data-message="套票星級">
+                <i class="fas fa-exclamation-circle"></i>
+                            <span>必填!</span>
+              </p>
+            </div>
+            
           </div>
 
                 
-          <div class="from-group mt-3 d-flex justify-content-between align-items-center">
-            <label for="ticketDescription" class="fw-bold">套票描述</label>
-            <textarea  name="套票描述" id="ticketDescription" class="w-75 min-h-111 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票描述 (限 100 字)"></textarea>
+          <div class="from-group  d-flex justify-content-between align-items-start flex-column">
+
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <label for="ticketDescription" class="fw-bold">套票描述</label>
+              <textarea  name="套票描述" id="ticketDescription" class="w-75 min-h-111 py-2 ps-12 bg-primary-2 border-0  border-bottom border-1 border-primary-0" placeholder="請填寫套票描述 (限 100 字)"></textarea>
+            </div>
+
+            <div class="alert-message d-flex ms-auto my-2 justify-content-start w-75" >
+              <p id="ticketPrice-message"  class="text-danger-1 fw-bold"   data-message="套票描述">
+                <i class="fas fa-exclamation-circle"></i>
+                            <span>必填!</span>
+              </p>
+            </div>
+           
           </div>
 
           <div class=" mt-4 d-flex justify-content-center justify-content-md-end align-items-center ">
-            <button type="button" class="addTicket-btn btn py-10 px-40 bg-primary-0 text-light fs-5" value="新增套票">新增套票</button>
+            <button type="button" data-name="addItem" class="addTicket-btn btn py-10 px-40 bg-primary-0 text-light fs-5" value="新增套票">新增套票</button>
           </div>
          
 
@@ -150,11 +225,14 @@
       let ticketNum = document.querySelector('#ticketNum')
       let ticketRate = document.querySelector('#ticketRate')
       let ticketDescription = document.querySelector('#ticketDescription')
+      let ticketPriceMessage = document.querySelectorAll("#ticketPrice-message")
 
       let regionSearch = document.querySelector('.regionSearch')
       let addTicketBtn = document.querySelector('.addTicket-btn')
+      let body = document.querySelector('body')
 
       let domElement = [] //需要操作dom元素時候再把它們push進來，重製時要清空
+      let alertMessage = Array.from(ticketPriceMessage) //存放 input警示 dom元素
       let data = [
         {
           "id": 0,
@@ -327,6 +405,12 @@
         return ticketCardArea.appendChild(li)
       }
 
+      //關閉 input 未輸入的顯示警告
+      function resetInputAlert(){
+        for(let i = 0 ; i < alertMessage.length ; i++){
+          alertMessage[i].style.display = 'none'
+        }
+      }
  
       //初始化
       function init(){
@@ -334,6 +418,7 @@
           // domElement.push(create_card(item))
           create_card(item)
         })
+        resetInputAlert()
       }
 
       //更新 重製 後 渲染
@@ -358,6 +443,35 @@
         })
         resetView(newData)
       }
+
+      // 檢查 input 是否為空 並顯示警訊 
+      function checkInput(newData){
+        for(let i=0 ; i < alertMessage.length ; i++){
+          let key = Object.keys(newData)[i+1]
+          if( newData[key] === '' ){
+            alertMessage[i].style.display="block"
+          }
+        }
+        let newDataValue = Object.values(newData)
+        return newDataValue.some(function(item){
+          return item === ''
+        })
+      
+      }
+
+      //清空 input 內容
+      function resetInput(){
+
+        ticketName.value = ''
+        ticketImgUrl.value = ''
+        ticketRegion.value = ''
+        ticketPrice.value = ''
+        ticketNum.value = ''
+        ticketRate.value = ''
+        ticketDescription.value = ''
+
+      }
+
 
 
       ticketPrice.addEventListener('input',function(e){
@@ -387,25 +501,32 @@
 
 
       addTicketBtn.addEventListener('click',function(e){
-        if(ticketName.value===''||ticketImgUrl.value===''||ticketRegion.value===''||ticketPrice.value===''
-        ||ticketNum.value===''||ticketRate.value===''||ticketDescription.value===''){
-            alert('欄位不能空白')
-            return
-        }
+
         let newData =  {
           "id": data.length ,
           "name": ticketName.value,
           "imgUrl": ticketImgUrl.value,
           "area": ticketRegion.value,
+          "price": ticketPrice.value,
+          "group": ticketNum.value,
+          "rate": ticketRate.value,
           "description": ticketDescription.value,
-          "group": Number(ticketNum.value),
-          "price": Number(ticketPrice.value),
-          "rate": Number(ticketRate.value)
+          
         }
-        data.push(newData)
-        resetView(data)
-        // console.log(data)
+
+
+        let control = checkInput(newData)
+        if( !control ){
+          data.push(newData)
+          resetView(data)
+          resetInput()
+          resetInputAlert()
+        }else{
+          return
+        }
+
       })
+
 
       regionSearch.addEventListener('change',function(e){
         console.log(e.target.value)
@@ -416,9 +537,19 @@
         }
         
       })
+ 
+
+      body.addEventListener('click',function(e){
+        if(e.target.getAttribute('data-name')==='addItem'){
+          e.preventDefault();
+        }else{
+          resetInputAlert()
+        }
+       
+      })
+      
       init()
-
-
+      
     </script>
   </body>
 </html>
