@@ -22,7 +22,7 @@
           <img class="d-none d-md-block" src="../assets/images/logo.png" alt="圖片">
         </div>
 
-        <div class="addTicket-form Noto-Sans text-primary-0 flex-grow-1">
+        <form class="addTicket-form Noto-Sans text-primary-0 flex-grow-1" action="">
 
           <h1 class="title fs-4 fw-bold border-bottom border-3 border-primary-0 mb-36"><span class="me-2"><i class="fas fa-plus-circle"></i></span>新增旅遊套票</h1>
           
@@ -64,8 +64,10 @@
               <label for="ticketRegion" class="fw-bold">景點地區</label>
               <select  id="ticketRegion" class="w-75 py-2 ps-12 bg-primary-2 border-0 border-bottom border-1 border-primary-0" name="景點地區">
                 <option value="" disabled selected hidden>請選擇景點地區</option>
+                <option value="新北">新北</option>
                 <option value="台北">台北</option>
                 <option value="台中">台中</option>
+                <option value="台南">台南</option>
                 <option value="高雄">高雄</option>
               </select>
             </div>
@@ -154,8 +156,10 @@
           </div>
          
 
-        </div>
+        </form>
+
       </div>
+
     </div>
 
     <div class="container-fluid bg-primary-2 px-0 pb-95">
@@ -165,50 +169,60 @@
         <div  class="search-area py-56 d-flex flex-column flex-md-row align-items-center">
           <select name="" class="regionSearch  py-2 ps-12 Noto-Sans text-primary-4 w-20">
             <option value="地區搜尋" disabled selected hidden>地區搜尋</option>
-            <option value="">全部地區</option>
+            <option value="全部地區">全部地區</option>
+            <option value="新北">新北</option>
             <option value="台北">台北</option>
             <option value="台中">台中</option>
+            <option value="台南">台南</option>
             <option value="高雄">高雄</option>
           </select>
-          <p id="searchResult-text" class="Noto-Sans text-primary-4 ms-30">本次搜尋共 3 筆資料</p>
+          <p id="searchResult-text" class="Noto-Sans mt-20 mt-md-0 text-primary-4 ms-30">本次搜尋共 3 筆資料</p>
         </div>
 
-        <ul class="ticketCard-area row gx-4 Noto-Sans">
+        <div class="show-card"> 
+          <ul class="ticketCard-area row gx-4 Noto-Sans">
 
-          <!-- 卡片樣式 -->
-        <!--           
-          <li class="ticketCard col-12 col-sm-6 col-md-4 ">
-            <div class="Card"> 
-              <div class="ticketCard-head">
-                <a href="#">
-                  <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80">
-                </a>
-                <p class="ticketCard-region">高雄</p>
-                <p class="ticketCard-rank">10</p>
+            <!-- 卡片樣式 -->
+          <!--           
+            <li class="ticketCard col-12 col-sm-6 col-md-4 ">
+              <div class="Card"> 
+                <div class="ticketCard-head">
+                  <a href="#">
+                    <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80">
+                  </a>
+                  <p class="ticketCard-region">高雄</p>
+                  <p class="ticketCard-rank">10</p>
+                </div>
+              
+                <div class="ticketCard-content">
+                  <h3 class="ticketCard-name">
+                    <a href="" >綠島自由行套裝行程</a>
+                  </h3>
+                  <p class="ticketCard-description">嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿，行程加贈『綠島浮潛體驗』以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。
+                  </p>
+                </div>
+                <div class="ticketCard-footer">
+                  <p class="ticketCard-num">
+                    <span><i class="fas fa-exclamation-circle"></i></span>
+                    <span>剩下最後 87 組</span>
+                  </p>
+                  <p class="ticketCard-price">
+                    TWD <span id="ticketCard-price">$1400</span>
+                  </p>
+                </div>
               </div>
-            
-              <div class="ticketCard-content">
-                <h3 class="ticketCard-name">
-                  <a href="" >綠島自由行套裝行程</a>
-                </h3>
-                <p class="ticketCard-description">嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿，行程加贈『綠島浮潛體驗』以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。
-                </p>
-              </div>
-              <div class="ticketCard-footer">
-                <p class="ticketCard-num">
-                  <span><i class="fas fa-exclamation-circle"></i></span>
-                  <span>剩下最後 87 組</span>
-                </p>
-                <p class="ticketCard-price">
-                  TWD <span id="ticketCard-price">$1400</span>
-                </p>
-              </div>
-            </div>
-          </li> 
-        -->
-
-
-        </ul>
+            </li> 
+          -->
+  
+  
+          </ul>
+        </div>
+       
+          <!-- 查無關鍵字區 -->
+          <div class="cantFind-area text-center">
+            <h3 class="text-primary-0 fs-2 fw-bold mb-40">查無此關鍵字資料</h3>
+            <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/js_week5/no_found.png?raw=true" alt="">
+          </div>
 
       </div>
 
@@ -217,6 +231,7 @@
 
     <script type="module" src="../main.js"></script>
     <script>
+      const ticketForm = document.querySelector(".addTicket-form");
       let ticketCardArea = document.querySelector('.ticketCard-area')
       let ticketName = document.querySelector('#ticketName')
       let ticketImgUrl = document.querySelector('#ticketImgUrl')
@@ -226,6 +241,11 @@
       let ticketRate = document.querySelector('#ticketRate')
       let ticketDescription = document.querySelector('#ticketDescription')
       let ticketPriceMessage = document.querySelectorAll("#ticketPrice-message")
+      let searchResultText = document.querySelector('#searchResult-text')
+
+      let showCard = document.querySelector('.show-card')
+      let cantFindArea = document.querySelector('.cantFind-area')
+      
 
       let regionSearch = document.querySelector('.regionSearch')
       let addTicketBtn = document.querySelector('.addTicket-btn')
@@ -414,11 +434,13 @@
  
       //初始化
       function init(){
+        findSearchShow(data)
         data.forEach(function(item){
           // domElement.push(create_card(item))
           create_card(item)
         })
         resetInputAlert()
+        checkSearchNum(data)
       }
 
       //更新 重製 後 渲染
@@ -427,11 +449,11 @@
         while(ticketCardArea.firstChild){
           ticketCardArea.removeChild(ticketCardArea.firstChild)
         }
-
+        findSearchShow(array)
         array.forEach(function(item){
           create_card(item)
         })
-
+        checkSearchNum(array)
       }
 
       //資料篩選 篩選後 渲染
@@ -459,19 +481,31 @@
       
       }
 
-      //清空 input 內容
-      function resetInput(){
+      //檢查 Select 內容一致性
+      function checkSelect(value){
 
-        ticketName.value = ''
-        ticketImgUrl.value = ''
-        ticketRegion.value = ''
-        ticketPrice.value = ''
-        ticketNum.value = ''
-        ticketRate.value = ''
-        ticketDescription.value = ''
-
+        if(value === '地區搜尋'||value === '全部地區'){
+          resetView(data)
+        }else{
+          filterData(value)
+        }
       }
 
+      //返回搜尋筆數 並顯示
+      function checkSearchNum(array){
+        searchResultText.textContent = `本次搜尋共 ${array.length} 筆資料`
+      }
+
+      //搜尋後 顯示開關
+      function findSearchShow(array){
+        if(array.length != 0){
+          showCard.style.display = 'block'
+          cantFindArea.style.display = 'none'
+        }else{
+          showCard.style.display = 'none'
+          cantFindArea.style.display = 'block'
+        }
+      }
 
 
       ticketPrice.addEventListener('input',function(e){
@@ -481,9 +515,8 @@
           }else if( reg.test( Number(e.target.value[1]) )&&e.target.value[0]==='0'){
             e.target.value = ''
           }
-     
-          
       })
+
       ticketRate.addEventListener('input',function(e){
           if(Number(e.target.value) <= 0   ){
             e.target.value = 1
@@ -501,6 +534,7 @@
 
 
       addTicketBtn.addEventListener('click',function(e){
+        e.preventDefault();
 
         let newData =  {
           "id": data.length ,
@@ -518,8 +552,9 @@
         let control = checkInput(newData)
         if( !control ){
           data.push(newData)
-          resetView(data)
-          resetInput()
+          // resetView(data)
+          checkSelect(regionSearch.value)
+          ticketForm.reset();
           resetInputAlert()
         }else{
           return
@@ -529,13 +564,9 @@
 
 
       regionSearch.addEventListener('change',function(e){
-        console.log(e.target.value)
-        if(e.target.value === ''){
-          resetView(data)
-        }else{
-          filterData(e.target.value)
-        }
-        
+        // console.log(e.target.value)
+        checkSelect(e.target.value)
+
       })
  
 
