@@ -520,6 +520,12 @@
         }
       }
 
+      //新增資料後，一律返回全部地區
+      function upDataView(){
+        regionSearch.value = '全部地區'
+        resetView(data)
+      }
+
  
 
       //input驗證事件 ， 金額最小0 ，避免使用者輸入 0後接著輸入其他數字 eq:012 012121...
@@ -543,12 +549,13 @@
 
       })
 
-      //input驗證事件 最小1 ，低於邊界值 ，返回最小值
+      //input事件 最小1 ，低於邊界值 ，返回最小值
       ticketNum.addEventListener('input',function(e){
         if(Number(e.target.value) <= 0  ){
             e.target.value = 1
           }
       })
+
 
 
       addTicketBtn.addEventListener('click',function(e){
@@ -571,7 +578,8 @@
         
         if( !control ){
           data.push(newData)
-          checkSelect(regionSearch.value)
+          // checkSelect(regionSearch.value)
+          upDataView()
           ticketForm.reset();
           // resetInputAlert()
         }else{
