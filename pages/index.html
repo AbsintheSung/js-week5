@@ -243,6 +243,7 @@
       let ticketPriceMessage = document.querySelectorAll("#ticketPrice-message")
       let searchResultText = document.querySelector('#searchResult-text')
 
+
       let showCard = document.querySelector('.show-card')
       let cantFindArea = document.querySelector('.cantFind-area')
       
@@ -425,7 +426,7 @@
         return ticketCardArea.appendChild(li)
       }
 
-      //關閉 input 未輸入的顯示警告
+      //初始化 input 未輸入的顯示警告
       function resetInputAlert(){
         for(let i = 0 ; i < alertMessage.length ; i++){
           alertMessage[i].style.display = 'none'
@@ -474,11 +475,23 @@
             alertMessage[i].style.display="block"
           }
         }
+
         let newDataValue = Object.values(newData)
         return newDataValue.some(function(item){
           return item === ''
-        })
-      
+        }) 
+      }
+
+      //當使用者未輸入值，顯示警告文字時候，在input輸入文字時候，對單一移除警告文字
+      function resetOneWarnAlert(){
+        let formArr = [ticketName,ticketImgUrl,ticketRegion,ticketPrice,ticketNum,ticketRate,ticketDescription]
+        for(let i = 0 ; i<formArr.length;i++ ){
+          formArr[i].addEventListener('input',function(e){
+            if(e.target.value != ''){
+              alertMessage[i].style.display = 'none'
+            }
+          })
+        }
       }
 
       //檢查 Select 內容一致性
@@ -507,7 +520,9 @@
         }
       }
 
+ 
 
+      //input驗證事件 ， 金額最小0 ，避免使用者輸入 0後接著輸入其他數字 eq:012 012121...
       ticketPrice.addEventListener('input',function(e){
           let reg =  /^[0-9]*$/
           if(Number(e.target.value) < 0 ){
@@ -517,6 +532,7 @@
           }
       })
 
+      //input驗證事件 最小0 最大10 超出邊界 ，返回邊界值
       ticketRate.addEventListener('input',function(e){
           if(Number(e.target.value) <= 0   ){
             e.target.value = 1
@@ -526,6 +542,8 @@
           }
 
       })
+
+      //input驗證事件 最小1 ，低於邊界值 ，返回最小值
       ticketNum.addEventListener('input',function(e){
         if(Number(e.target.value) <= 0  ){
             e.target.value = 1
@@ -550,12 +568,12 @@
 
 
         let control = checkInput(newData)
+        
         if( !control ){
           data.push(newData)
-          // resetView(data)
           checkSelect(regionSearch.value)
           ticketForm.reset();
-          resetInputAlert()
+          // resetInputAlert()
         }else{
           return
         }
@@ -570,16 +588,10 @@
       })
  
 
-      body.addEventListener('click',function(e){
-        if(e.target.getAttribute('data-name')==='addItem'){
-          e.preventDefault();
-        }else{
-          resetInputAlert()
-        }
-       
-      })
+   
       
       init()
+      resetOneWarnAlert()
       
     </script>
   </body>
